@@ -142,12 +142,12 @@ app.post('/doacoes', function (req, res) {
     var _data_inicio = validator.trim(validator.escape(req.param('data_inicio')));
 	var _data_fim = validator.trim(validator.escape(req.param('data_fim')));	
 	var _id_usuario = validator.trim(validator.escape(req.param('id_usuario')));
-	var _id_projeto = validator.trim(validator.escape(req.param('id_projeto')));	
+	var _id_instituicao = validator.trim(validator.escape(req.param('id_instituicao')));	
     var _created_at = validator.trim(validator.escape(req.param('created_at')));
 
     // Chama o método user da controller que insere um usuário
     // Através de callback...PUTA QUE O PAREOO!!
-    doacaoController.save(_descricao, _data_inicio, _data_fim,  _id_usuario, _id_projeto, _created_at, function (resp) {
+    doacaoController.save(_descricao, _data_inicio, _data_fim,  _id_usuario, _id_instituicao, _created_at, function (resp) {
         res.json(resp);
     });    
 });

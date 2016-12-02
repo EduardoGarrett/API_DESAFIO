@@ -4,14 +4,14 @@
 var db = require('../db_config.js');
 
 // Método para salvar uma doacao
-exports.save = function (_descricao, _data_inicio, _data_fim, _id_usuario, _id_projeto, _created_at, callback) {
+exports.save = function (_descricao, _data_inicio, _data_fim, _id_usuario, _id_instituicao, _created_at, callback) {
     //Salvando um projeto!!  
     new db.Doacao({
         descricao: _descricao,     
 		data_inicio : _data_inicio,
 		data_fim : _data_fim, 
 		id_usuario : _id_usuario,
-		id_projeto : _id_projeto,		
+		id_instituicao : _id_instituicao,		
         created_at: _created_at,
     }).save(function (error, doacao) {
         // Em caso de erro! 
